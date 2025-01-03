@@ -1,0 +1,277 @@
+/* nav */
+.header1 {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.header1 img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-overlay h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+.header-overlay .breadcrumb {
+    font-size: 1em;
+    margin-top: 10px;
+    color: #ddd;
+}
+
+.icons {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icons img {
+    width: 50px;
+    height: auto;
+}
+
+.left-icon {
+    margin-left: 20px;
+}
+
+.right-icon {
+    margin-right: 20px;
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+}
+
+.form-section, .info-section {
+    flex: 1 1 45%;
+    border: 1px dashed purple;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+}
+
+.form-section h2, .info-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}
+
+.form-section p {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #f9f9f9;
+}
+
+.form-group textarea {
+    resize: none;
+    height: 100px;
+}
+
+.form-group button {
+    background: #6c63ff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    display: block;
+    margin: 0 auto;
+}
+
+.form-group button:hover {
+    background: #5a54d8;
+}
+
+.info-section2 {
+    color: #333;
+    /* border: 2px solid purple; */
+    box-shadow: 0px 10px 10px 0px grey;
+    
+}
+
+.info-item2 {
+    margin-bottom: 15px;
+    display: flex;
+     align-items: center; 
+    
+
+}
+
+.info-item2 img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+
+
+/* Tablet View (768px to 1024px) */
+@media (max-width: 1024px) {
+    .header1 img {
+        height: 400px;
+    }
+
+    .header-overlay h1 {
+        font-size: 2.5em;
+    }
+
+    .form-section, .info-section {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .form-group button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+}
+
+/* Mobile Landscape View (576px to 768px) */
+@media (max-width: 768px) {
+    .header1 img {
+        height: 300px;
+    }
+
+    .header-overlay h1 {
+        font-size: 2em;
+    }
+
+    .icons img {
+        width: 40px;
+    }
+
+    .form-section, .info-section {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .form-group label {
+        font-size: 0.9em;
+    }
+
+    .form-group input, .form-group textarea {
+        font-size: 0.9em;
+    }
+
+    iframe {
+        height: 150px;
+    }
+}
+
+/* Mobile Portrait View (up to 576px) */
+@media (max-width: 576px) {
+    .header1 img {
+        height: 250px;
+    }
+
+    .header-overlay h1 {
+        font-size: 1.8em;
+    }
+
+    .header-overlay .breadcrumb {
+        font-size: 0.9em;
+    }
+
+    .icons img {
+        width: 30px;
+    }
+
+    .form-section h2, .info-section h2 {
+        font-size: 1.2em;
+    }
+
+    .form-group input, .form-group textarea {
+        padding: 8px;
+        font-size: 0.8em;
+    }
+
+    .form-group button {
+        padding: 8px 14px;
+        font-size: 0.8em;
+    }
+
+    .info-item2 img {
+        width: 25px;
+    }
+
+    iframe {
+        height: 120px;
+    }
+}
+
+/* Extra Small Devices (up to 375px) */
+@media (max-width: 375px) {
+    .header-overlay h1 {
+        font-size: 1.5em;
+    }
+
+    .form-group input, .form-group textarea {
+        font-size: 0.75em;
+    }
+
+    .form-group button {
+        padding: 6px 12px;
+        font-size: 0.75em;
+    }
+
+    .info-item2 img {
+        width: 20px;
+    }
+}
+

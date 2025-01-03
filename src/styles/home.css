@@ -1,0 +1,921 @@
+/* Banner Section */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    animation: slide 9s infinite;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes slide {
+    0%, 33% {
+        transform: translateX(0);
+    }
+    34%, 66% {
+        transform: translateX(-100%);
+    }
+    67%, 100% {
+        transform: translateX(-200%);
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    padding: 2rem;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.overlay h1, .overlay p {
+    opacity: 0;
+    animation: fadeInOut 9s infinite;
+}
+
+.overlay h1 {
+    animation-delay: 1s;
+    color: #32CD32;
+}
+
+.overlay p {
+    animation-delay: 3s;
+}
+
+.overlay button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    color: white;
+    background: #8e24aa;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    opacity: 0;
+    animation: fadeInOut 9s infinite;
+    animation-delay: 5s;
+}
+
+.overlay button:hover {
+    background: #6a1b9a;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+
+.animated-car {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    animation: rotateAroundPause 9s linear infinite;
+}
+
+@keyframes rotateAroundPause {
+    0% {
+        transform: translate(-150px, -150px) rotate(0deg);
+    }
+    25% {
+        transform: translate(-140px, -200px) rotate(90deg); /* Slightly above the circle */
+    }
+    50% {
+        transform: translate(-150px, -150px) rotate(180deg);
+    }
+    75% {
+        transform: translate(-160px, -200px) rotate(270deg); /* Above the circle again */
+    }
+    100% {
+        transform: translate(-150px, -150px) rotate(360deg);
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .header-left {
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #ffffff;
+        width: 100%;
+        border-top: 1px solid #ddd;
+        padding: 10px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .join-btn {
+        font-size: 14px;
+    }
+
+    .overlay {
+        width: 250px;
+        height: 250px;
+        padding: 1.5rem;
+        right: 10%;
+    }
+
+    .overlay h1 {
+        font-size: 1.2rem;
+    }
+
+    .overlay p {
+        font-size: 0.9rem;
+    }
+
+    .overlay button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+/* Medium devices (Tablets, 768px to 1199px) */
+@media (max-width: 1199px) {
+    .banner {
+        height: 90vh;
+    }
+
+    .overlay {
+        width: 300px;
+        height: 300px;
+        padding: 2rem;
+        right: 10%;
+    }
+
+    .overlay h1 {
+        font-size: 1.5rem;
+    }
+
+    .overlay p {
+        font-size: 1rem;
+    }
+
+    .overlay button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .animated-car {
+        width: 80px;
+    }
+}
+
+/* Small devices (Phones, 480px to 767px) */
+@media (max-width: 767px) {
+    .banner {
+        height: 75vh;
+    }
+
+    .overlay {
+        width: 250px;
+        height: 250px;
+        padding: 1.5rem;
+        right: 5%;
+    }
+
+    .overlay h1 {
+        font-size: 1.3rem;
+    }
+
+    .overlay p {
+        font-size: 0.9rem;
+    }
+
+    .overlay button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .animated-car {
+        width: 70px;
+    }
+
+    .carousel img {
+        object-fit: cover;
+    }
+}
+
+/* Extra small devices (Phones, below 480px) */
+@media (max-width: 480px) {
+    .banner {
+        height: 40vh;
+    }
+
+    .overlay {
+        width: 200px;
+        height: 200px;
+        padding: 1rem;
+        right: 5%;
+        text-align: center;
+    }
+
+    .overlay h1 {
+        font-size: 1rem;
+    }
+
+    .overlay p {
+        font-size: 0.8rem;
+    }
+
+    .overlay button {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .animated-car {
+        width: 60px;
+    }
+
+    .carousel img {
+        object-fit: cover;
+    }
+}
+
+/* Universal styles for all screens */
+.carousel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    animation: slide 9s infinite;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* service section */
+
+.services-section {
+    padding: 4rem 1rem;
+    background: linear-gradient(to right, #fff, #f8f9fa);
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+.section-subtitle {
+    color: #a64ac9;
+    font-size: 1rem;
+   margin-bottom: 0.5rem;
+   
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #30475e;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 cards per row by default */
+    gap: 2rem;
+}
+
+.service-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    background: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-card .front {
+    position: relative;
+    padding: 2rem 1.5rem;
+    z-index: 2;
+}
+
+.service-card .icon {
+    font-size: 3rem;
+    color: #ff6f61;
+    margin-bottom: 1rem;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.service-title {
+    font-size: 1.25rem;
+    color: #30475e;
+    margin-bottom: 0.5rem;
+}
+
+.service-desc {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.service-card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    transition: transform 0.6s ease;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-card .back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-card:hover .back {
+    transform: scaleY(1); /* Reveal back on hover */
+}
+
+@media screen and (max-width: 1199px) {
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 cards per row on medium screens */
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards per row on small screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on even smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* 1 card per row on very small screens */
+    }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.card-pink {
+    background: #ffe8e6; /* Light pink */
+    color: #d9534f; /* Bus Service Color */
+}
+
+.card-purple {
+    background: #f2e9ff; /* Light purple */
+    color: #6f42c1; /* Sports Training Color */
+}
+
+.card-yellow {
+    background: #fff5d1; /* Light yellow */
+    color: #f0ad4e; /* Music Training Color */
+}
+
+.card-blue {
+    background: #e5f8ff; /* Light blue */
+    color: #5bc0de; /* Best Teachers Color */
+}
+
+.card-green {
+    background: #e8ffe6; /* Light green */
+    color: #5cb85c; /* Art Classes Color */
+}
+
+/* Default Positioning and Animation */
+.lollipop {
+    position: absolute;
+    top: 130%;
+    left: 5%;
+    width: 80px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.star-sm {
+    position: absolute;
+    top: 130%;
+    right: 10%;
+    width: 30px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.star {
+    position: absolute;
+    top: 140%;
+    right: 5%;
+    width: 60px;
+    animation: float 5s ease-in-out infinite;
+}
+
+/* Float Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Media Queries to Adjust Float Animation and Element Sizes */
+
+/* For small to medium screens (Tablets and smaller devices) */
+@media screen and (max-width: 768px) {
+    .lollipop {
+        width: 60px; /* Reduce size */
+        top: 120%; /* Adjust vertical position */
+        left: 8%; /* Adjust horizontal position */
+        animation: float 4s ease-in-out infinite;
+    }
+
+    .star-sm {
+        width: 25px; /* Reduce size */
+        top: 120%; /* Adjust vertical position */
+        right: 12%; /* Adjust horizontal position */
+        animation: float 5s ease-in-out infinite;
+    }
+
+    .star {
+        width: 50px; /* Reduce size */
+        top: 130%; /* Adjust vertical position */
+        right: 7%; /* Adjust horizontal position */
+        animation: float 4.5s ease-in-out infinite;
+    }
+}
+
+/* For smaller screens (smartphones) */
+@media screen and (max-width: 480px) {
+    .lollipop {
+        width: 50px; /* Further reduce size */
+        top: 50%; /* Adjust vertical position */
+        left: 10%; /* Adjust horizontal position */
+        animation: float 3s ease-in-out infinite; /* Faster animation */
+    }
+
+    .star-sm {
+        width: 20px; /* Further reduce size */
+        top: 50%; /* Adjust vertical position */
+        right: 15%; /* Adjust horizontal position */
+        animation: float 4s ease-in-out infinite; /* Faster animation */
+    }
+
+    .star {
+        width: 40px; /* Further reduce size */
+        top: 55%; /* Adjust vertical position */
+        right: 10%; /* Adjust horizontal position */
+        animation: float 4.2s ease-in-out infinite; /* Faster animation */
+    }
+}
+
+/* For larger screens (Large desktops and beyond) */
+@media screen and (min-width: 1200px) {
+    .lollipop {
+        width: 100px; /* Increase size */
+        top: 130%; /* Reset vertical position */
+        left: 5%; /* Reset horizontal position */
+        animation: float 4s ease-in-out infinite;
+    }
+
+    .star-sm {
+        width: 40px; /* Increase size */
+        top: 130%; /* Reset vertical position */
+        right: 10%; /* Reset horizontal position */
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .star {
+        width: 80px; /* Increase size */
+        top: 140%; /* Reset vertical position */
+        right: 5%; /* Reset horizontal position */
+        animation: float 5s ease-in-out infinite;
+    }
+}
+
+
+.container1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1125px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    margin-left: 70px; /* Move the container to the left */
+}
+
+.text-side {
+    max-width: 60%;
+    margin-right: 20px;
+}
+
+.text-side h2 {
+    color: #3f3d56;
+    margin-bottom: 20px;
+}
+
+.text-side ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.text-side li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.text-side li .icon {
+    font-size: 2rem;
+    margin-right: 10px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.carousel-images {
+    position: relative;
+    max-width: 400px;
+    width: 400px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.carousel-images img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-images img.active {
+    opacity: 1;
+    position: relative;
+}
+
+/* Media Queries for responsiveness */
+
+/* For tablets and smaller screens (width <= 768px) */
+@media (max-width: 768px) {
+    .container1 {
+        flex-direction: column;
+        margin-left: 20px; /* Adjust left margin */
+    }
+    .text-side {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .carousel-images {
+        max-width: 100%;
+        width: 100%;
+        height: 180px; /* Adjust carousel size */
+    }
+    .text-side h2 {
+        font-size: 1.5rem; /* Smaller heading size */
+    }
+    .text-side li .icon {
+        font-size: 1.5rem; /* Smaller icon size */
+    }
+}
+
+/* For mobile devices (width <= 480px) */
+@media (max-width: 480px) {
+    .container1 {
+        margin-left: 10px; /* Further adjust left margin for smaller screens */
+        padding: 10px; /* Less padding for mobile screens */
+    }
+    .text-side h2 {
+        /* align-items: center; */
+        text-align: center;
+        font-size: 1.3rem; /* Smaller heading size */
+    }
+    .text-side li .icon {
+        font-size: 1.2rem; /* Even smaller icons for mobile */
+    }
+    .carousel-images {
+        height: 150px; /* Adjust carousel height for mobile */
+    }
+}
+
+/* Enrollment Section */
+.enrollment-section {
+    background-color: #d7eafc;
+    position: relative;
+    text-align: center;
+    padding: 40px 20px;
+    overflow: hidden;
+   
+   
+}
+
+.enrollment-section .rainbow {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    max-width: 150px;
+}
+
+.enrollment-section .butterfly {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    max-width: 100px;
+}
+
+.enrollment-section h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #8b3d9a;
+}
+
+.enrollment-section h1 {
+    margin: 10px 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.enrollment-section p {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    color: #2c3e50;
+}
+
+.enrollment-section .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #9b51e0;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.enrollment-section .btn:hover {
+    background-color: #7a3cb0;
+}
+
+.enrollment-section .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    /* background: url('../assets/images/wa') repeat-x; */ 
+    background-size: contain;
+}
+
+/* Media Queries for responsiveness */
+
+/* For larger screens (desktops, tablets in landscape mode) */
+@media (min-width: 768px) {
+    .enrollment-section .rainbow {
+        max-width: 150px; /* Keep rainbow size constant */
+    }
+
+    .enrollment-section .butterfly {
+        max-width: 100px; /* Keep butterfly size constant */
+    }
+
+    .enrollment-section h2 {
+        font-size: 1.8rem; /* Slightly larger text for headings */
+    }
+
+    .enrollment-section h1 {
+        font-size: 2.5rem; /* Larger heading */
+    }
+
+    .enrollment-section p {
+        font-size: 1.3rem; /* Increase font size for paragraph */
+    }
+
+    .enrollment-section .btn {
+        padding: 12px 24px;
+        font-size: 1.2rem; /* Slightly larger button */
+    }
+}
+
+/* For tablets and smaller screens (width <= 768px) */
+@media (max-width: 768px) {
+    .enrollment-section .rainbow {
+        max-width: 120px; /* Reduce size of rainbow */
+        top: 5%; /* Adjust position for smaller screens */
+        left: 10%; /* Adjust position */
+    }
+
+    .enrollment-section .butterfly {
+        max-width: 80px; /* Reduce size of butterfly */
+        top: 15%; /* Adjust position */
+        right: 10%; /* Adjust position */
+    }
+
+    .enrollment-section h2 {
+        font-size: 1.6rem; /* Slightly smaller heading */
+    }
+
+    .enrollment-section h1 {
+        font-size: 2.2rem; /* Slightly smaller heading */
+    }
+
+    .enrollment-section p {
+        font-size: 1.1rem; /* Slightly smaller paragraph text */
+    }
+
+    .enrollment-section .btn {
+        padding: 10px 20px; /* Adjust button size */
+        font-size: 1rem; /* Maintain readable font size */
+    }
+}
+
+/* For mobile devices (width <= 480px) */
+@media (max-width: 480px) {
+    .enrollment-section .rainbow {
+        max-width: 80px; /* Reduce rainbow size even further */
+        top: 3%; /* Adjust positioning */
+        left: 5%; /* Adjust positioning */
+    }
+
+    .enrollment-section .butterfly {
+        max-width: 60px; /* Reduce butterfly size */
+        top: 10%; /* Adjust positioning */
+        right: 5%; /* Adjust positioning */
+    }
+
+    .enrollment-section h2 {
+        font-size: 1.4rem; /* Smaller heading text for mobile */
+    }
+
+    .enrollment-section h1 {
+        font-size: 1.8rem; /* Smaller heading text for mobile */
+    }
+
+    .enrollment-section p {
+        font-size: 1rem; /* Smaller paragraph text */
+    }
+
+    .enrollment-section .btn {
+        padding: 8px 16px; /* Smaller button size */
+        font-size: 0.9rem; /* Adjust font size for mobile screens */
+    }
+}
+
+/* For very small mobile devices (width <= 320px) */
+@media (max-width: 320px) {
+    .enrollment-section .rainbow {
+        max-width: 80px; /* Further reduce size */
+        top: 2%; /* Further adjust position */
+        left: 5%; /* Further adjust position */
+    }
+
+    .enrollment-section .butterfly {
+        max-width: 50px; /* Further reduce size */
+        top: 5%; /* Further adjust position */
+        right: 5%; /* Further adjust position */
+    }
+
+    .enrollment-section h2 {
+        font-size: 1.3rem; /* Even smaller heading text */
+    }
+
+    .enrollment-section h1 {
+        font-size: 1.6rem; /* Even smaller heading text */
+    }
+
+    .enrollment-section p {
+        font-size: 0.9rem; /* Even smaller paragraph text */
+    }
+
+    .enrollment-section .btn {
+        padding: 6px 12px; /* Smallest button size */
+        font-size: 0.8rem; /* Smallest font size for buttons */
+    }
+}
+
+
+
+
+
+/* Fixed WhatsApp and Call Buttons */
+.fixed-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.fixed-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.fixed-buttons a.call {
+    background-color: #4CAF50;
+}
+
+.fixed-buttons a:hover {
+    transform: scale(1.1);
+}
+
+
+
+

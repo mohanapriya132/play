@@ -1,0 +1,429 @@
+.carousel {
+    position: relative;
+    max-width: 100%;
+     overflow: hidden; 
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+} 
+
+.carousel-images img {
+    width: 100%;
+     height: auto;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.carousel-indicators button {
+    width: 15px;
+    height: 15px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.carousel-indicators button.active {
+    background-color: #ff0099;
+}
+
+.carousel-content {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    color: white;
+    background: rgba(128, 0, 128, 0.7);
+    padding: 20px;
+    border-radius: 50%;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: circleAnimation 1.5s infinite;
+}
+
+.carousel-content h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #FFD700;
+    animation: textAnimation 1s;
+}
+
+.carousel-content p {
+    margin: 10px 0 0;
+    font-size: 1rem;
+    animation: textAnimation 1.5s;
+}
+
+@keyframes circleAnimation {
+    0%, 100% {
+        transform: translateY(-50%) scale(1);
+    }
+    50% {
+        transform: translateY(-50%) scale(1.1);
+    }
+}
+
+@keyframes textAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    font-size: 2rem;
+    color: #000;
+    text-align: center;
+    margin-top: 40px;
+}
+
+p {
+    font-size: 1rem;
+    color: black;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.balloon-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.balloon-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.balloon-card img {
+    max-width: 70%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.balloon-card h2 {
+    font-size: 0.9rem;
+    color: #000;
+    margin: 0;
+}
+
+.balloon-card:hover {
+    transform: scale(1.1);
+    background-color: purple;
+    cursor: pointer;
+}
+
+.quotes {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #f1f1f1;
+}
+
+.quote {
+    width: 48%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+.quote p {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.quote span {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.tamil-quote p {
+    font-size: 1.1rem;
+}
+
+.two-column-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.content {
+    flex: 1;
+    max-width: 50%;
+}
+
+.text-section {
+    font-size: 1rem;
+    color: #333;
+}
+
+.text-section .subtitle {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.text-section ul {
+    padding-left: 20px;
+}
+
+.text-section li {
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+.animated-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.image-section {
+    flex: 1;
+    max-width: 50%;
+}
+
+.image-section img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .quotes {
+        flex-direction: column;
+    }
+
+    .content, .image-section {
+        max-width: 100%;
+    }
+
+    .carousel-content {
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+        right: 5%;
+    }
+
+    .carousel-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-content p {
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .balloon-card {
+        width: 120px;
+        height: 120px;
+    }
+
+    .balloon-card h2 {
+        font-size: 0.8rem;
+    }
+
+    .quote {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .balloon-container {
+        gap: 10px;
+    }
+
+    .balloon-card {
+        width: 100px;
+        height: 100px;
+    }
+
+    .balloon-card img {
+        max-width: 60%;
+    }
+
+    .quote {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .quote p {
+        font-size: 0.9rem;
+    }
+
+    .text-section .subtitle {
+        font-size: 1rem;
+    }
+
+    .text-section ul {
+        padding-left: 15px;
+    }
+}
+
+
+
+
+/* Responsive Design */
+
+/* Tablets (landscape and portrait) */
+@media (max-width: 1024px) {
+    .carousel-content {
+        width: 250px;
+        height: 250px;
+        padding: 15px;
+        right: 5%;
+    }
+
+    .carousel-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .carousel-content p {
+        font-size: 1rem;
+    }
+
+    .two-column-layout {
+        flex-direction: column;
+    }
+
+    .content, .image-section {
+        max-width: 100%;
+    }
+
+    .balloon-card {
+        width: 200px;
+        height: 200px;
+    }
+
+    .balloon-card h2 {
+        font-size: 1rem;
+    }
+
+    .quote {
+        width: 100%;
+    }
+}
+
+/* Mobile Devices (large phones) */
+@media (max-width: 768px) {
+    .carousel-content {
+        width: 200px;
+        height: 200px;
+    }
+
+    .carousel-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-content p {
+        font-size: 0.9rem;
+    }
+
+    .balloon-container {
+        gap: 15px;
+    }
+
+    .balloon-card {
+        width: 150px;
+        height: 150px;
+    }
+
+    .quote {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .carousel-content {
+        width: 150px;
+        height: 150px;
+        padding: 10px;
+    }
+
+    .carousel-content h1 {
+        font-size: 1.2rem;
+    }
+
+    .carousel-content p {
+        font-size: 0.8rem;
+    }
+
+    .balloon-container {
+        gap: 10px;
+    }
+
+    .balloon-card {
+        width: 120px;
+        height: 120px;
+    }
+
+    .balloon-card img {
+        max-width: 60%;
+    }
+
+    .balloon-card h2 {
+        font-size: 0.8rem;
+    }
+
+    .quote {
+        padding: 10px;
+    }
+
+    .quote p {
+        font-size: 0.8rem;
+    }
+
+    .quote span {
+        font-size: 0.7rem;
+    }
+
+    .two-column-layout {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .content, .image-section {
+        max-width: 100%;
+    }
+}

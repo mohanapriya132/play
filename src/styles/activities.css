@@ -1,0 +1,268 @@
+/* service section */
+
+.services-section {
+    padding: 4rem 1rem;
+    background: linear-gradient(to right, #fff, #f8f9fa);
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-subtitle {
+    color: #a64ac9;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #30475e;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 cards per row by default */
+    gap: 2rem;
+}
+
+.service-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    background: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-card .front {
+    position: relative;
+    padding: 2rem 1.5rem;
+    z-index: 2;
+}
+
+.service-card .icon {
+    font-size: 3rem;
+    color: #ff6f61;
+    margin-bottom: 1rem;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.service-title {
+    font-size: 1.25rem;
+    color: #30475e;
+    margin-bottom: 0.5rem;
+}
+
+.service-desc {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.service-card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    transition: transform 0.6s ease;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-card .back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-card:hover .back {
+    transform: scaleY(1); /* Reveal back on hover */
+}
+
+@media screen and (max-width: 1199px) {
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 cards per row on medium screens */
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards per row on small screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on even smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* 1 card per row on very small screens */
+    }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.card-pink {
+    background: #ffe8e6; /* Light pink */
+    color: #d9534f; /* Bus Service Color */
+}
+
+.card-purple {
+    background: #f2e9ff; /* Light purple */
+    color: #6f42c1; /* Sports Training Color */
+}
+
+.card-yellow {
+    background: #fff5d1; /* Light yellow */
+    color: #f0ad4e; /* Music Training Color */
+}
+
+.card-blue {
+    background: #e5f8ff; /* Light blue */
+    color: #5bc0de; /* Best Teachers Color */
+}
+
+.card-green {
+    background: #e8ffe6; /* Light green */
+    color: #5cb85c; /* Art Classes Color */
+}
+
+
+
+
+/* Default Positioning and Animation */
+.lollipop {
+    position: absolute;
+    top: 130%;
+    left: 5%;
+    width: 80px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.star-sm {
+    position: absolute;
+    top: 130%;
+    right: 10%;
+    width: 30px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.star {
+    position: absolute;
+    top: 140%;
+    right: 5%;
+    width: 60px;
+    animation: float 5s ease-in-out infinite;
+}
+
+/* Float Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Media Queries to Adjust Float Animation and Element Sizes */
+
+/* For small to medium screens (Tablets and smaller devices) */
+@media screen and (max-width: 768px) {
+    .lollipop {
+        width: 60px; /* Reduce size */
+        top: 120%; /* Adjust vertical position */
+        left: 8%; /* Adjust horizontal position */
+        animation: float 4s ease-in-out infinite;
+    }
+
+    .star-sm {
+        width: 25px; /* Reduce size */
+        top: 120%; /* Adjust vertical position */
+        right: 12%; /* Adjust horizontal position */
+        animation: float 5s ease-in-out infinite;
+    }
+
+    .star {
+        width: 50px; /* Reduce size */
+        top: 130%; /* Adjust vertical position */
+        right: 7%; /* Adjust horizontal position */
+        animation: float 4.5s ease-in-out infinite;
+    }
+}
+
+/* For smaller screens (smartphones) */
+@media screen and (max-width: 480px) {
+    .lollipop {
+        width: 50px; /* Further reduce size */
+        top: 50%; /* Adjust vertical position */
+        left: 10%; /* Adjust horizontal position */
+        animation: float 3s ease-in-out infinite; /* Faster animation */
+    }
+
+    .star-sm {
+        width: 20px; /* Further reduce size */
+        top: 50%; /* Adjust vertical position */
+        right: 15%; /* Adjust horizontal position */
+        animation: float 4s ease-in-out infinite; /* Faster animation */
+    }
+
+    .star {
+        width: 40px; /* Further reduce size */
+        top: 55%; /* Adjust vertical position */
+        right: 10%; /* Adjust horizontal position */
+        animation: float 4.2s ease-in-out infinite; /* Faster animation */
+    }
+}
+
+/* For larger screens (Large desktops and beyond) */
+@media screen and (min-width: 1200px) {
+    .lollipop {
+        width: 100px; /* Increase size */
+        top: 130%; /* Reset vertical position */
+        left: 5%; /* Reset horizontal position */
+        animation: float 4s ease-in-out infinite;
+    }
+
+    .star-sm {
+        width: 40px; /* Increase size */
+        top: 130%; /* Reset vertical position */
+        right: 10%; /* Reset horizontal position */
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .star {
+        width: 80px; /* Increase size */
+        top: 140%; /* Reset vertical position */
+        right: 5%; /* Reset horizontal position */
+        animation: float 5s ease-in-out infinite;
+    }
+}
