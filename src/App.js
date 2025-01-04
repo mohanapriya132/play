@@ -14,7 +14,7 @@ import Activities from './components/Activities'
 const App = () => {
   return (
     <Router>
-      <Header />
+      {/* <Header /> */}
       <Navbar />
       <Routes>
         <Route path='/' element={<Home/>}/>

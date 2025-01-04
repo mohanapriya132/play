@@ -13,13 +13,18 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    display: flex;
-    animation: slide 9s infinite;
+    display: flex; 
+    animation: slide 9s infinite; 
 }
 
 .carousel img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+}
+.party-image{
+    width: 100%;
+   
     object-fit: cover;
 }
 

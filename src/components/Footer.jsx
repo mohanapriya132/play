@@ -9,6 +9,9 @@ import { FaPuzzlePiece } from "react-icons/fa6";
 import { FaCakeCandles } from "react-icons/fa6";
 import { FaImages } from "react-icons/fa";
 import { FaUserTie } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaEnvelope } from "react-icons/fa";
+import { FaPhone } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -51,11 +54,11 @@ const Footer = () => {
          {/* Contact Us Section  */}
         <div class="footer-column">
             <h3>Contact Us</h3>
-            <p><i class="fas fa-map-marker-alt"></i>Yemaraja Gardens,
+            <p><FaLocationDot />Yemaraja Gardens,
                 Periyar Nagar,ThaayaarThooppu Road, ,
                 Bungalow Surandai, Surandai - 627 859, Tenkasi District, Tamilnadu, India.</p>
-            <p><i class="fas fa-envelope"></i> playlearn@gmail.com</p>
-            <p><i class="fas fa-phone"></i>91 9444069888</p>
+            <p><FaEnvelope /> playlearn@gmail.com</p>
+            <p><FaPhone />91 9444069888</p>
         </div>
     </div>
 

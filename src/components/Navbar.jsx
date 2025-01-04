@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/images/Logo fi.png'; 
 import { TbWorld } from "react-icons/tb";
@@ -10,19 +10,18 @@ import { FaUserTie } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div>
           <nav class="navbar">
         <div class="logo">
             <img src={logo} alt="Logo" /> 
         </div>
-         <ul class="nav-links">
-            {/* <li><a href="index.html"><TbWorld /> Our World</a></li>
-            <li><a href="ourstory.html"><FaBook /> Our Story</a></li>
-            <li><a href="activities.html"><FaPuzzlePiece /> Activities</a></li>
-            <li><a href="partytime.html"><FaCakeCandles /> Party Time</a></li>
-            <li><a href="gallery.html"><FaImages /> Gallery</a></li>
-            <li><a href="advisor.html"><FaUserTie /> Advisor</a></li> */}
+         <ul class="nav-links" className={`nav-links ${isOpen ? "show" : ""}`}>
+
            <Link to="/">
            <li><a href="#"><TbWorld /> Our World</a></li>
            </Link>
@@ -42,17 +41,22 @@ const Navbar = () => {
            <li><a href="#"><FaUserTie /> Advisor</a></li>
            </Link>
         </ul>
-        <button class="hamburger">
+        <button class="hamburger" className={`hamburger ${isOpen ? "active" : ""}`} onClick={toggleMenu}>
             <span></span>
             <span></span>
             <span></span>
-        </button>
-        <Link to="/contact">
-        <a href="#">
-            <button class="join-btn"><FaEnvelope /> Contact US</button>
-        </a> </Link>
+        </button> 
+       
+      <Link to="/contact">
+      <button className="join-btn">
+        <FaEnvelope /> Contact Us
+      </button>
+    </Link>
     </nav>
-    </div> 
+  </div> 
+ 
+  
+    
   )
 }
 

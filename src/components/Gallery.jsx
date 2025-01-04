@@ -32,7 +32,7 @@ const Gallery = () => {
             <div class="image-grid">
                 <div class="grid-item">
                     <img src={Saravanan} alt="Saravanan Raju"/>
-                    <p>Saravanan Raju, Chennai Verti IT Solution Praveen, Surandai Reporter Rajkumar, Surandai</p>
+                    <p>Saravanan Raju, Chennai Verti IT Solution Pravin, Surandai Reporter Rajkumar, Surandai</p>
                 </div>
                 
                 <div class="grid-item">
